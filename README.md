@@ -15,3 +15,7 @@ Deberas realizar un template (html/css/js) para que una pagina web quede lo más
   
 2. La barra de porcentajes en la primera fila debajo del titulo Resultados Claves, debe cambiar con los mismos colores que el punto anterior.
 3. Los iconos (+) y (-) deberán expandir y contraer la sección subsiguiente
+
+
+### Comentarios
+Puedes usar frameworks/librerias como bootstrap, plugins jquery, etc, pero no esperamos que uses un framework como vue.js o react.
