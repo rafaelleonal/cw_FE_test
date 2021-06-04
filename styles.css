@@ -1,0 +1,77 @@
+/* Estilos Generales */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.show-elements{
+    display: flex;
+}
+
+.hidden{
+    display: none;
+}
+
+/* Estilos a la barre de progreso circular */
+.progress-rounded {
+    width: 150px;
+    height: 150px;
+    background: none;
+    position: relative;
+}
+  
+.progress-rounded::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 6px solid #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+  
+.progress-rounded>span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+  
+.progress-rounded .progress-left {
+    left: 0;
+}
+  
+.progress-rounded .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 6px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+  
+.progress-rounded .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+  
+.progress-rounded .progress-right {
+    right: 0;
+}
+  
+.progress-rounded .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+}
