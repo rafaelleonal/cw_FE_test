@@ -1,15 +1,15 @@
 /* Selección de elementos */
-    /* Elementos utilizados para la barra de progreso circular */ 
+/* Elementos utilizados para la barra de progreso circular */
 const progressRounded = document.querySelector('.progress-rounded'); //Barra circular
 const percentage = progressRounded.getAttribute('data-value'); //Valor de la barra circular
 
-    /* Elementos utilizados para la barra de progreso rectangular */ 
+/* Elementos utilizados para la barra de progreso rectangular */
 const containerProgress = document.querySelector('.progress-result'); //Contenedor que alberga la barra
 const progressBar = document.querySelector('#progress-bar'); //Relleno de barra
 const percentageBar = progressBar.getAttribute('aria-valuenow'); //Valor de la barra rectangular
 const percentageBarPer = `${percentageBar}%`; /* Tamaño de relleno de la barra dinámico */
 
-    /* Elementos utilizados para ocultar o mostrar secciones */ 
+/* Elementos utilizados para ocultar o mostrar secciones */
 const btnExpandProyects = document.querySelector('.btn-toggle-proyects'); //Boton toggle "Terminar proyecto OKS"
 btnExpandProyects.addEventListener('click', expandirProyectos);
 const rowHidden = document.querySelector('.row-hidden');
@@ -20,11 +20,11 @@ const rowHidden_1 = document.querySelector('.row-hidden-1');
 
 /* Function que expande la seccion de "Terminar proyecto OKS" */
 
-function expandirProyectos(){
+function expandirProyectos() {
     const contenedorOculto = document.querySelector('.hidden');
 
     /* Validacion para saber si el boton esta o no seleccionado*/
-    if(!rowHidden.contains(contenedorOculto)){
+    if (!rowHidden.contains(contenedorOculto)) {
         rowHidden.classList.remove('show-elements');
         rowHidden.classList.add('hidden');
     } else {
@@ -34,11 +34,11 @@ function expandirProyectos(){
 }
 
 /* Function que expande la seccion de "Yo" */
-function expandirYo(){
+function expandirYo() {
     const contenedorOculto = document.querySelector('.hidden');
 
     /* Validacion para saber si el boton esta o no seleccionado*/
-    if(!rowHidden_1.contains(contenedorOculto)){
+    if (!rowHidden_1.contains(contenedorOculto)) {
 
         rowHidden_1.classList.remove('show-elements');
         rowHidden_1.classList.add('hidden');
@@ -50,22 +50,22 @@ function expandirYo(){
 
 //Funcion que cambia el color según el % completado
 
-function cambiarColor () {
+function cambiarColor() {
 
     /* Se seleccionan las barras*/
     const progressLeft = document.getElementById('progress-left');
     const progressRight = document.getElementById('progress-right');
 
     /* Validacion para cambiar el color del borde */
-    if(percentage >= 0 && percentage <= 100){
-        if(percentage >= 60 && percentage <= 79){
+    if (percentage >= 0 && percentage <= 100) {
+        if (percentage >= 60 && percentage <= 79) {
             progressLeft.classList.remove('border-danger');
             progressLeft.classList.add('border-warning');
 
             progressRight.classList.remove('border-danger');
             progressRight.classList.add('border-warning');
         }
-        if(percentage >= 80 && percentage <= 100){
+        if (percentage >= 80 && percentage <= 100) {
             progressLeft.classList.remove('border-danger');
             progressLeft.classList.add('border-success');
 
@@ -76,17 +76,17 @@ function cambiarColor () {
 
     /* Validacion para cambiar el color de la barra */
 
-    if(percentageBar >= 0 && percentageBar <= 100){
-        if(percentageBar >= 0 && percentageBar <= 59){
+    if (percentageBar >= 0 && percentageBar <= 100) {
+        if (percentageBar >= 0 && percentageBar <= 59) {
             progressBar.style.width = percentageBarPer; /* Se define el tamaño de la barra*/
         }
-        if(percentageBar >= 60 && percentageBar <= 79){
+        if (percentageBar >= 60 && percentageBar <= 79) {
             progressBar.classList.remove('bg-danger');
             progressBar.classList.add('bg-warning');
 
             progressBar.style.width = percentageBarPer; /* Se define el tamaño de la barra*/
         }
-        if(percentageBar >= 80 && percentageBar <= 100){
+        if (percentageBar >= 80 && percentageBar <= 100) {
             progressBar.classList.remove('bg-danger');
             progressBar.classList.add('bg-success');
 
@@ -105,29 +105,29 @@ function cambiarColor () {
 
 /* Function para rellenar la barra de progreso circular con JQuery */
 
-$(function() {
+$(function () {
 
-  $(".progress-rounded").each(function() {
+    $(".progress-rounded").each(function () {
 
-    var value = $(this).attr('data-value');
-    var left = $(this).find('.progress-left .progress-bar');
-    var right = $(this).find('.progress-right .progress-bar');
+        var value = $(this).attr('data-value');
+        var left = $(this).find('.progress-left .progress-bar');
+        var right = $(this).find('.progress-right .progress-bar');
 
-    if (value > 0) {
-      if (value <= 50) {
-        right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-      } else {
-        right.css('transform', 'rotate(180deg)')
-        left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-        cambiarColor();
-      }
+        if (value > 0) {
+            if (value <= 50) {
+                right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+            } else {
+                right.css('transform', 'rotate(180deg)')
+                left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+                cambiarColor();
+            }
+        }
+    })
+
+    function percentageToDegrees(percentage) {
+
+        return percentage / 100 * 360
+
     }
-  })
-
-  function percentageToDegrees(percentage) {
-
-    return percentage / 100 * 360
-    
-  }
 
 });

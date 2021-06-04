@@ -1,14 +1,14 @@
 /* Estilos Generales */
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-.show-elements{
+.show-elements {
     display: flex;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
@@ -19,7 +19,7 @@ body{
     background: none;
     position: relative;
 }
-  
+
 .progress-rounded::after {
     content: "";
     width: 100%;
@@ -30,7 +30,7 @@ body{
     top: 0;
     left: 0;
 }
-  
+
 .progress-rounded>span {
     width: 50%;
     height: 100%;
@@ -39,11 +39,11 @@ body{
     top: 0;
     z-index: 1;
 }
-  
+
 .progress-rounded .progress-left {
     left: 0;
 }
-  
+
 .progress-rounded .progress-bar {
     width: 100%;
     height: 100%;
@@ -53,7 +53,7 @@ body{
     position: absolute;
     top: 0;
 }
-  
+
 .progress-rounded .progress-left .progress-bar {
     left: 100%;
     border-top-right-radius: 80px;
@@ -62,11 +62,11 @@ body{
     -webkit-transform-origin: center left;
     transform-origin: center left;
 }
-  
+
 .progress-rounded .progress-right {
     right: 0;
 }
-  
+
 .progress-rounded .progress-right .progress-bar {
     left: -100%;
     border-top-left-radius: 80px;
