@@ -1,21 +1,12 @@
-# Claritywave
+# Respuesta a prueba de maquetación Claritywave
 
-## Test Front End
-
-Deberas realizar un template (html/css/js) para que una pagina web quede lo más parecido posible a la imagen que se muestra a continuación:
-
-![Example](/test_cw.png)
-
-### Algunas condiciones
-
-1. El circulo que se muestra amarillo al rededor de la cara de la persona, debe poder configurarce un porcentaje de completado y debe cambiar en diferentes colores:
-     - Menor 60%  - Rojo
-     - Entre 60% y 80%  - Amarillo
-     - Mayor 80%  - Verde
-  
-2. La barra de porcentajes en la primera fila debajo del titulo Resultados Claves, debe cambiar con los mismos colores que el punto anterior.
-3. Los iconos (+) y (-) deberán expandir y contraer la sección subsiguiente
-
+## Test Front End hecho con Bootstrap 5, agregando funcionalidad con JavaScript Vanilla y JQuery
 
 ### Comentarios
-Puedes usar frameworks/librerias como bootstrap, plugins jquery, etc, pero no esperamos que uses un framework como vue.js o react.
+
+1. El diseño y el sitio cumplen con las condiciones establecidas, la barra de progreso circular es dinámica y cambia de color según el porcentaje de progreso. Este porcentaje puede ser cambiado con el atributo "data-value". La función encargada de realizar los cambios se encuentra en el archivo JS.
+2. De la misma forma la barra de progreso rectangular, cumple con la misma condición, además el número que muestra y el tamaño de llenado también funcionan en base al porcentaje declarado. Este porcentaje puede ser cambiado con el atributo "aria-valuenow". La función encargada de realizar los cambios se encuentra en el archivo JS.
+3. Los botones de "+" y "-" de Terminar Proyecto OKS son funcionales, muestran y ocultan los elementos gracias a los eventos que tienen los botones en el archivo JS.
+4. Es importante mencionar que por temas de tiempo de entrega, el diseño no es totalmente responsive, sin embargo, se puede adaptar fácilmente con más tiempo, gracias a las clases de bootstrap.
+
+Saludos y gracias, estoy atento a comentarios.
